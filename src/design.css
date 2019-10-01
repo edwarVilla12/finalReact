@@ -1,0 +1,165 @@
+/*import the fonts to be used in the calendar*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+/* Name; .icon ;
+   Description:   gives all the appearance to the icons in the calendar
+*/
+.icon {
+  font-family: "Material Icons", serif;
+  font-style: normal;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  text-transform: none;
+}
+
+/* VARIABLES */
+
+:root {
+  --main-color: #1a8fff;
+  --text-color: rgb(94, 92, 92);
+  --text-color-light: #ccc;
+  --border-color: rgb(192, 195, 197);
+  --bg-color: #d5ecf3;
+  --neutral-color: #fff;
+}
+
+/* PRINCIPAL */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Name; body ;
+   Description:   gives all the appearance to the body of the page, and the template letter
+*/
+body {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text-color);
+  background: url(http://www.hdfondos.eu/pictures/2015/1201/1/orig_767645.jpg);
+}
+
+/* Name: header ;
+   Description:   gives all the appearance to the header of the page
+*/
+header {
+  display: block;
+  width: 100%;
+  padding: 1.75em 0;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--neutral-color);
+}
+
+/* give the features to the main tag in the View*/
+main {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5em;
+  max-width: 50em;
+}
+
+/* GRID */
+
+/* give the grid caracteristics to the classes rows and cols*/
+.row {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.row-middle {
+  align-items: center;
+}
+
+.col {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.col-start {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.col-center {
+  justify-content: center;
+  text-align: center;
+}
+
+.col-end {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* Calendar */
+
+.calendar {
+  display: block;
+  position: relative;
+  width: 100%;
+  background: var(--neutral-color);
+  border: 1px solid var(--border-color);
+}
+
+.calendar .header {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 115%;
+  padding: 1.5em 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* give to the prev icon an indentation to evite touching the border*/
+.calendar .header .icon:first-of-type {
+  margin-left: 1em;
+}
+
+/* give to the next icon an indentation to evite touching the border*/
+.calendar .header .icon:last-of-type {
+  margin-right: 1em;
+}
+
+/* .calendar .days   give the features to the days of the week like size, color and others */
+.calendar .days {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: rgb(21, 145, 228);
+  font-size: 80%;
+  padding: 0.75em 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.calendar .body .cell {
+  position: relative;
+  height: 5em;
+  border-right: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.calendar .body .row {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.calendar .body .cell .number {
+  position: absolute;
+  font-size: 82.5%;
+  line-height: 1;
+  top: 0.75em;
+  right: 0.75em;
+  font-weight: 700;
+}
+
+/*.calendar .body .disabled  gives the 
+   color to the disabled class that color the sunday days
+*/
+.calendar .body .disabled {
+  color: rgb(235, 123, 123);
+}
